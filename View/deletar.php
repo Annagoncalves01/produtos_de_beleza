@@ -1,5 +1,5 @@
 <?php
-require_once '../Controller/ProdutoController.php';
+require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/Controller/ProdutoController.php';
 $produtoController = new ProdutoController($pdo);
 
 $id_produto = $_GET['id'];
