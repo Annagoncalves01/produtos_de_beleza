@@ -1,43 +1,40 @@
 <?php
-require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/config.php';
 require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/Controller/ProdutoController.php';
+require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/config.php'; // Certifique-se de que $pdo está sendo incluído
 
-$produtoController= new ProdutoController($pdo);
+$produtoController = new ProdutoController($pdo);
 
-$produtos=$produtoController->listarProdutos();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $produtoController->atualizarProduto($_POST['id_produto'], $_POST['nome'], $_POST['marca'], $_POST['tipo'], $_POST['preço']);
+    header("Location: listar.php");
+    exit;
+}
 
-if(isset($_POST['atualizar_nome'])&& isset($_POST['atualizar_idade'])&& isset($_POST['atualizar_altura'])&& isset($_POST['atualizar_peso'])&& isset($_POST['atualizar_cpf'])&& isset($_POST['atualizar_rg'])&& isset($_POST['produto_id'])){
-    $produtoController->atualizarProduto($_POST['atualizar_nome'], $_POST['atualizar_idade'], $_POST['atualizar_altura'], $_POST['atualizar_peso'], $_POST['atualizar_cpf'], $_POST['atualizar_rg'], $_POST['produto_id']);
-    header("Location: ../../index.php");
+$id_produto = $_GET['id'];
+$produto = $produtoController->buscarProdutoPorId($id_produto);
 
+if (!$produto) {
+    echo "Produto não encontrado!";
+    exit;
 }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualizar Produto</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <form method="POST">
-        <select name="produto_id">
-       <?php
-        foreach($produtos as $produto):?>
-        <option value="<?php echo $produto['id'];?>">
-        <?php echo $produto ['id'];?></option>
-        <?php endforeach; ?>
-        </select>
-
-        <input type="text" name="atualizar_nome" placeholder="Atualize o nome">
-        <input type="text" name="atualizar_idade" placeholder="Atualize a idade">
-        <input type="text" name="atualizar_altura" placeholder="Atualize a altura">
-        <input type="text" name="atualizar_peso" placeholder="Atualize o peso">
-        <input type="text" name="atualizar_cpf" placeholder="Atualize o cpf">
-        <input type="text" name="atualizar_rg" placeholder="Atualize o rg">
+    <h1>Atualizar Produto</h1>
+    <form method="post">
+        <input type="hidden" name="id_produto" value="<?php echo $produto['id_produto']; ?>">
+        Nome: <input type="text" name="nome" value="<?php echo htmlspecialchars($produto['nome']); ?>" required><br>
+        Marca: <input type="text" name="marca" value="<?php echo htmlspecialchars($produto['marca']); ?>" required><br>
+        Tipo: <input type="text" name="tipo" value="<?php echo htmlspecialchars($produto['tipo']); ?>" required><br>
+        Preço: <input type="number" step="0.01" name="preço" value="<?php echo htmlspecialchars($produto['preço']); ?>" required><br>
         <button type="submit">Atualizar</button>
     </form>
-</body>     <br><br>   
-<a href="../../index.php">VOLTAR</a>
-
+</body>
 </html>

@@ -1,26 +1,35 @@
 <?php
+require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/config.php';
 require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/Model/ProdutoModel.php';
+
 class ProdutoController {
-private $produtoModel;
-    public function __construct($pdo){
+    private $produtoModel;
+
+    public function __construct($pdo) {
         $this->produtoModel = new ProdutoModel($pdo);
     }
-    public function criarProduto($nome, $idade,$altura, $peso,$cpf, $rg){
-        $this->produtoModel->criarProduto($nome, $idade,$altura, $peso,$cpf, $rg);
-    }
-    public function listarProdutos(){
+
+    public function listarProdutos() {
         return $this->produtoModel->listarProdutos();
     }
-    public function exibirListaProdutos(){
-        $Produtos = $this->produtoModel->listarProdutos();
-        include 'C:/aluno2/xampp/htdocs/olimpiadas-mvc/view/Produto/listar.php';
+
+    public function criarProduto($nome, $marca, $tipo, $preço) {
+        $this->produtoModel->criarProduto($nome, $marca, $tipo, $preço);
     }
-    public function atualizarProduto($nome, $idade,$altura, $peso,$cpf, $rg, $id_Produto){
-        $this->produtoModel->atualizarProduto($nome, $idade,$altura, $peso,$cpf, $rg, $id_Produto);
+
+    public function atualizarProduto($id_produto, $nome, $marca, $tipo, $preço) {
+        $this->produtoModel->atualizarProduto($id_produto, $nome, $marca, $tipo, $preço);
     }
-    public function deletarProduto($id_produto){
+
+    public function deletarProduto($id_produto) {
         $this->produtoModel->deletarProduto($id_produto);
     }
-} 
-
+    public function buscarProdutoPorId($id_produto) {
+        return $this->produtoModel->buscarProdutoPorId($id_produto);
+    }
+    public function exibirListaProdutos() {
+        $produtos = $this->listarProdutos();
+        require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/View/listar.php';
+    }
+}
 ?>
