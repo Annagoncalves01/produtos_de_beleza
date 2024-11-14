@@ -5,6 +5,27 @@ class ProdutoModel {
     public function __construct($pdo) {
         $this->pdo = $pdo;
     }
+    public function adicionarUsuario($nome_usuario, $email, $senha)
+    {
+        $sql = "INSERT INTO usuario (nome_usuario, email, senha) VALUES (?, ?, ?)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$nome_usuario, $email, $senha]);
+    }
+
+    public function buscarUsuarioPorEmail($email)
+    {
+        $sql = "SELECT * FROM usuario WHERE email = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function listarUsuarios() {
+        $sql = "SELECT nome_usuario, email, senha FROM usuarios";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
 
     public function criarProduto($nome, $marca, $tipo, $preço) {
         $sql = "INSERT INTO produtos (nome, marca, tipo, preço) VALUES (?, ?, ?, ?)";

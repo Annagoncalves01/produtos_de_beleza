@@ -1,5 +1,5 @@
 <?php
-require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/Controller/ProdutoController.php';
+require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza-main (3)/produtos_de_beleza/Controller/ProdutoController.php';
 $produtoController = new ProdutoController($pdo);
 
 $id_produto = $_GET['id'];
@@ -20,10 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <h1>Deletar Produto</h1>
+    <div class="container">
+
     <p>Tem certeza de que deseja excluir este produto?</p>
     <form method="post">
         <button type="submit">Sim, Deletar</button>
         <a href="listar.php">Cancelar</a>
-    </form>
+    </form></div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-require_once '../Controller/ProdutoController.php';
+require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza-main (3)/produtos_de_beleza/Controller/ProdutoController.php';
 $produtoController = new ProdutoController($pdo);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -16,14 +16,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
     <h1>Adicionar Produto</h1>
-    <form method="post">
+    <form method="POST">
+        <div class="container">
         Nome: <input type="text" name="nome" required><br><br>
         Marca: <input type="text" name="marca" required><br><br>
         Tipo: <input type="text" name="tipo" required><br><br>
         Preço: <input type="number" step="10.01" name="preço" required><br><br>
         <button type="submit">Salvar</button>
-    </form>
+    </form></div>
 </body>
 </html>
