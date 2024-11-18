@@ -66,7 +66,7 @@ h1:hover {
 h1{
     font-family: Bodoni Moda, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
     ;
-    color: rgb(255, 255, 255);
+    color: rgb(179, 179, 179);
     text-shadow: 
         -1px -1px 0 #000, 
          1px -1px 0 #000, 
@@ -97,19 +97,24 @@ body {
 }
 
 .add-button {
-    margin-bottom: 20px;
-    padding: 10px 15px;
-    color: #fff;
-    background-color: #aa445d;
-    text-decoration: none;
-    border-radius: 5px;
+    display: block;
+    padding: 10px;
+    background: linear-gradient(135deg, #9d153e, #c2185b);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 
 .add-button:hover {
-    background-color: #701e40;
-}
+    background: linear-gradient(135deg, #c2185b, #9d153e);
+    transform: scale(1.02); 
+text-decoration: none;}
 
 .card-container {
     display: flex;
@@ -163,14 +168,15 @@ body {
 .card-actions a {
     padding: 8px 12px;
     color: #fff;
-    background-color: #dd5094;
+    background-color: #7c0000;
     border-radius: 4px;
     text-decoration: none;
     transition: background-color 0.3s;
 }
 
 .card-actions a:hover {
-    background-color: #ff71b1;
+    background-color: #ce6f6f;
+    text-decoration: none;
 }
 .container {
     max-width: 500px;
@@ -227,7 +233,7 @@ button[type="submit"]:hover {
     border: 12px solid transparent; 
     font-size: 40px;
     background-clip: padding-box;
-    border-image: url("img/download.png") 50 round; 
+    border-image: url("View/produtos/download.png") 50 round; 
 }
 
 .form-container::before {
@@ -405,50 +411,13 @@ a:hover {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 16px; /* Define o espaçamento entre a logo e o texto */
+    gap: 16px; 
 }
 
 .logo-container h2 {
-    margin-left: 16px; /* Adiciona um espaçamento extra se necessário */
-}
-.adicionar-resenha {
-    margin: 20px 0;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 16px; 
 }
 
-.adicionar-resenha form {
-    display: flex;
-    flex-direction: column;
-}
-
-.adicionar-resenha label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.adicionar-resenha input,
-.adicionar-resenha textarea {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.adicionar-resenha button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.adicionar-resenha button:hover {
-    background-color: #45a049;
-}
 .site-footer {
     background-color: #4b0c0c; 
     color: #f8f8f8; 
@@ -524,6 +493,7 @@ header.blog-header {
     background-color: #f4f4f4;
     padding: 20px;
     display: flex;
+    margin: -20px;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -605,5 +575,15 @@ main.blog-content {
 .post:hover {
     transform: translateY(-10px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cadastro-link {
+    font-weight: bold;
+    color: #950025;
+    font-size: 16px;
+}
+
+.cadastro-link:hover {
+    text-decoration: underline;
 }
 

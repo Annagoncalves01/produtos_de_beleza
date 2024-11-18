@@ -52,7 +52,7 @@ exit();
     <br><br><br>
     <h3>Adicionar Produto</h3>
     <form method="POST">
-        <div class="container">
+        <div class="container2">
         Nome: <input type="text" name="nome" required><br><br>
         Marca: <input type="text" name="marca" required><br><br>
         Tipo: <input type="text" name="tipo" required><br><br>
@@ -79,8 +79,8 @@ exit();
             <h4>Contato</h4>
             <ul>
                 <li><a href="#">Email: contato@beautyluxury.com</a></li>
-                <li><a href="#">Telefone: (11) 1234-5678</a></li>
-                <li><a href="#">Endereço: Rua Exemplo, 123, São Paulo, SP</a></li>
+                <li><a href="#">Telefone: (18) 99693-5678</a></li>
+                <li><a href="#">Endereço: Rua Flores, 123, São Paulo, SP</a></li>
             </ul>
         </div>
     </div>

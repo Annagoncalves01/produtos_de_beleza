@@ -8,8 +8,8 @@ class ProdutoController {
     public function __construct($pdo) {
         $this->produtoModel = new ProdutoModel($pdo);
     }
-    public function adicionarUsuario($nome_usuario, $email, $senha)
-    {
+
+    public function adicionarUsuario($nome_usuario, $email, $senha) {
         if (strlen($senha) < 8) {
             echo "A senha deve ter pelo menos 8 caracteres.";
             return;
@@ -27,40 +27,29 @@ class ProdutoController {
         echo "Usuário cadastrado com sucesso!";
     }
 
-
-    public function login($email, $senha)
-    {
+   
+    public function login($email, $senha) {
         $usuario = $this->produtoModel->buscarUsuarioPorEmail($email);
-
-        if ($usuario) {
-            if (password_verify($senha, $usuario['senha'])) {
-                session_start();
-                $_SESSION['usuario_id'] = $usuario['id'];
-                $_SESSION['nome_usuario'] = $usuario['nome_usuario'];
-
-                header("Location: ../index.php");
-                exit();
-            } else {
-                echo "Senha incorreta!";
-            }
-        } else {
-            echo "E-mail não encontrado!";
+    
+        if ($usuario && password_verify($senha, $usuario['senha'])) {
+            session_start();
+            $_SESSION['usuario_id'] = $usuario['id'];
+            $_SESSION['nome_usuario'] = $usuario['nome_usuario'];
+            return true;
         }
+        return false;
     }
-    public function listarResenhas()
-    {
-        return $this->produtoModel->listarResenhas(); // Corrigido para usar a seta
+    
+
+    public function listarResenhas() {
+        return $this->produtoModel->listarResenhas(); 
     }
 
-    public function criarResenhas($nome_usuario, $conteudo, $data)
-    {
+    public function criarResenhas($nome_usuario, $conteudo, $data) {
         $this->produtoModel->criarResenhas($nome_usuario, $conteudo, $data);
     }
 
-
-
-    public function listarusuarios()
-    {
+    public function listarusuarios() {
         $usuario = $this->produtoModel->listarUsuarios();
         include 'C:/aluno2/xampp/htdocs/produtos_de_beleza/view/usuario/listar.php';
     }
@@ -80,9 +69,11 @@ class ProdutoController {
     public function deletarProduto($id_produto) {
         $this->produtoModel->deletarProduto($id_produto);
     }
+
     public function buscarProdutoPorId($id_produto) {
         return $this->produtoModel->buscarProdutoPorId($id_produto);
     }
+
     public function exibirListaProdutos() {
         $produtos = $this->listarProdutos();
         require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/View/listar.php';

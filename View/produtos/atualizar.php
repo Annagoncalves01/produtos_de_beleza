@@ -60,9 +60,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
   
    
     
-    </header>
-    <div class="container">
-        <h3>Atualizar Produto</h3>
+    </header>     <br><br>   <h3>Atualizar Produto</h3>
+
+    <div class="container2">
         <form method="POST">
             <input type="hidden" name="id_produto" value="<?php echo $produto['id_produto']; ?>">
             Nome: <input type="text" name="nome" value="<?php echo htmlspecialchars($produto['nome']); ?>" required><br>
@@ -92,8 +92,8 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             <h4>Contato</h4>
             <ul>
                 <li><a href="#">Email: contato@beautyluxury.com</a></li>
-                <li><a href="#">Telefone: (11) 1234-5678</a></li>
-                <li><a href="#">Endereço: Rua Exemplo, 123, São Paulo, SP</a></li>
+                <li><a href="#">Telefone: (18) 99693-5678</a></li>
+                <li><a href="#">Endereço: Rua Flores, 123, São Paulo, SP</a></li>
             </ul>
         </div>
     </div>

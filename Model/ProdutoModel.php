@@ -5,15 +5,14 @@ class ProdutoModel {
     public function __construct($pdo) {
         $this->pdo = $pdo;
     }
-    public function adicionarUsuario($nome_usuario, $email, $senha)
-    {
+
+    public function adicionarUsuario($nome_usuario, $email, $senha) {
         $sql = "INSERT INTO usuario (nome_usuario, email, senha) VALUES (?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$nome_usuario, $email, $senha]);
     }
 
-    public function buscarUsuarioPorEmail($email)
-    {
+    public function buscarUsuarioPorEmail($email) {
         $sql = "SELECT * FROM usuario WHERE email = ?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$email]);
@@ -25,23 +24,23 @@ class ProdutoModel {
         $stmt = $this->pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    
 
     public function criarProduto($nome, $marca, $tipo, $preço) {
         $sql = "INSERT INTO produtos (nome, marca, tipo, preço) VALUES (?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$nome, $marca, $tipo, $preço]);
     }
+
     public function criarResenhas($nome_usuario, $conteudo, $data) {
         $stmt = $this->pdo->prepare("INSERT INTO resenhas (nome_usuario, conteudo, data) VALUES (?, ?, ?)");
         $stmt->execute([$nome_usuario, $conteudo, $data]);
-    
-}
-public function listarResenhas() {
-    $sql = "SELECT * FROM resenhas";
-    $stmt = $this->pdo->query($sql);
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+    }
+
+    public function listarResenhas() {
+        $sql = "SELECT * FROM resenhas";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function listarProdutos() {
         $sql = "SELECT * FROM produtos";
@@ -54,12 +53,14 @@ public function listarResenhas() {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$nome, $marca, $tipo, $preço, $id_produto]);
     }
+
     public function buscarProdutoPorId($id_produto) {
         $sql = "SELECT * FROM produtos WHERE id_produto = ?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$id_produto]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
     public function deletarProduto($id_produto) {
         $sql = "DELETE FROM produtos WHERE id_produto = ?";
         $stmt = $this->pdo->prepare($sql);

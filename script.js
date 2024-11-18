@@ -6,18 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", () => {
             const selectedCategory = button.getAttribute("data-category");
             
-            // Remove active class from all buttons
             categoryButtons.forEach(btn => btn.classList.remove("active"));
             button.classList.add("active");
 
-            // Mostrar ou esconder posts
             if (selectedCategory === "all") {
-                // Exibir todos os posts
                 posts.forEach(post => {
                     post.style.display = "block";
                 });
             } else {
-                // Mostrar apenas os 3 primeiros da categoria selecionada
                 let visiblePosts = 0;
                 posts.forEach(post => {
                     const postCategory = post.getAttribute("data-category");
@@ -33,6 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Trigger 'all' category on load
     document.querySelector(".category-btn[data-category='all']").click();
 });

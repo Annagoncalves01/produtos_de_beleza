@@ -74,8 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h4>Contato</h4>
             <ul>
                 <li><a href="#">Email: contato@beautyluxury.com</a></li>
-                <li><a href="#">Telefone: (11) 1234-5678</a></li>
-                <li><a href="#">Endereço: Rua Exemplo, 123, São Paulo, SP</a></li>
+                <li><a href="#">Telefone: (18) 99693-5678</a></li>
+                <li><a href="#">Endereço: Rua Flores, 123, São Paulo, SP</a></li>
             </ul>
         </div>
     </div>
