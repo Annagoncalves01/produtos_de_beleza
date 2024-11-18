@@ -32,6 +32,16 @@ class ProdutoModel {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$nome, $marca, $tipo, $preço]);
     }
+    public function criarResenhas($nome_usuario, $conteudo, $data) {
+        $stmt = $this->pdo->prepare("INSERT INTO resenhas (nome_usuario, conteudo, data) VALUES (?, ?, ?)");
+        $stmt->execute([$nome_usuario, $conteudo, $data]);
+    
+}
+public function listarResenhas() {
+    $sql = "SELECT * FROM resenhas";
+    $stmt = $this->pdo->query($sql);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
     public function listarProdutos() {
         $sql = "SELECT * FROM produtos";

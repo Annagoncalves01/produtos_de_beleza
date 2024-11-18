@@ -1,22 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Oleo+Script:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tangerine:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Ms+Madi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Oleo+Script:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tangerine:wght@400;700&display=swap');
 
 
-/* Para reduzir a opacidade da imagem de fundo */
-body::before {
+.catalogo{
+    position: relative;
+    background: url('img/fundo.gif') no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cadastro::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com 50% de opacidade */
+    background-color: rgba(0, 0, 0, 0.5); 
     z-index: -1;
 }
 
-body{
-    background-color: #f4f4f4;
-}
+
 .cadastro {
     position: relative;
     background: url('img/Leonardo_Phoenix_A_luxurious_and_sophisticated_ecommerce_websi_1.jpg') no-repeat;
@@ -27,10 +37,44 @@ body{
     align-items: center;
     justify-content: center;
 }
+h2 {
+    font-family: 'Great Vibes', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #f4f4f4;
+    font-size: 38px;
+    text-shadow: 
+        -1px -1px 0 #000, 
+         1px -1px 0 #000, 
+        -1px  1px 0 #000, 
+         1px  1px 0 #000, 
+         0   0 8px rgba(255, 255, 255, 0.577), 
+         0   0 15px rgba(255, 255, 255, 0.6),
+         0   0 20px rgba(255, 255, 255, 0.4); 
+}
+
+h1:hover {
+    color: #d18282; 
+    text-shadow: 
+        -1px -1px 0 #000, 
+         1px -1px 0 #000, 
+        -1px  1px 0 #000, 
+         1px  1px 0 #000, 
+         0   0 8px rgba(255, 99, 71, 0.8),
+         0   0 15px rgba(255, 99, 71, 0.6),
+         0   0 20px rgba(255, 99, 71, 0.4);
+}
+
 h1{
     font-family: Bodoni Moda, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
     ;
     color: rgb(255, 255, 255);
+    text-shadow: 
+        -1px -1px 0 #000, 
+         1px -1px 0 #000, 
+        -1px  1px 0 #000, 
+         1px  1px 0 #000, 
+         0   0 8px rgba(255, 255, 255, 0.8), 
+         0   0 15px rgba(255, 255, 255, 0.6),
+         0   0 20px rgba(255, 255, 255, 0.4); 
 
 }
 body {
@@ -38,6 +82,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #f4f4f4;
+
 }
 
 body {
@@ -96,8 +142,9 @@ body {
 }
 
 .card h2 {
+    font-family:  Playfair Display, monospace;
     font-size: 20px;
-    color: #444;
+    color: #ffffff;
     margin: 10px 0;
 }
 
@@ -136,14 +183,12 @@ body {
 }
 
 
-/* Estilo do formulário */
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Estilo dos inputs */
 input[type="text"],
 input[type="number"] {
     padding: 10px;
@@ -156,7 +201,7 @@ input[type="number"] {
 
 /* Estilo do botão de envio */
 button[type="submit"] {
-    background-color: #af4c95;
+    background-color: #571e26;
     color: white;
     padding: 12px;
     border: none;
@@ -167,10 +212,9 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #a04577;
-}/* Fundo de tela com imagem */
+    background-color: #a0455c;
+}
 
-/* Contêiner do formulário para centralizar e estilizar */
 .form-container {
     padding: 2rem;
     border-radius: 12px;
@@ -180,10 +224,10 @@ button[type="submit"]:hover {
     text-align: center;
     align-items: center;
     position: relative;
-    border: 12px solid transparent; /* Define a espessura da borda */
+    border: 12px solid transparent; 
     font-size: 40px;
     background-clip: padding-box;
-    border-image: url("img/download.png") 50 round; /* Borda com imagem */
+    border-image: url("img/download.png") 50 round; 
 }
 
 .form-container::before {
@@ -194,8 +238,8 @@ button[type="submit"]:hover {
     right: 0;
     bottom: 0;
     border-radius: inherit;
-    background-color: rgba(255, 255, 255, 0.6); /* Fundo transparente */
-    z-index: -1; /* Coloca o fundo atrás do conteúdo */
+    background-color: rgba(255, 255, 255, 0.6); 
+    z-index: -1; 
 }
 
 form input[type="text"],
@@ -208,11 +252,11 @@ form button {
     border: 1px solid #ddd;
     border-radius: 6px;
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.8); /* Fundo transparente nos inputs */
+    background-color: rgba(255, 255, 255, 0.8); 
 }
 
 form button {
-    background-color: #64225f;
+    background-color: #571e26;
     color: white;
     border: none;
     cursor: pointer;
@@ -222,7 +266,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #6c1d68;
+    background-color: #6c1d35;
 }
 
 a {
@@ -235,27 +279,331 @@ a {
 a:hover {
     text-decoration: underline;
 }
-header {
-    background-color: #4b0c0c;
+
+  .linha1{
+    border-bottom: #ffffff solid 1px;
+    padding-top: -2%;
+
+
+}
+.linha{
+    border-bottom: #ffffff solid 1px;
+    padding-top: -2%;
+}
+/* Estilo da barra de navegação */
+.navbar {
+    margin: -20px;
+    height: 110px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0 20px;
+    background-color: #4b0c0c;
+    border-bottom: 1px solid #ffffff;
+    width: 1510px;
+    box-sizing: border-box;
 }
 
-header .logo {
-    flex: 0 1 auto;
-    margin-right: auto;
+/* Estilo para a logo e o texto */
+.navbar .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-header .site-name {
-    flex: 1;
-    text-align: center;
+.navbar img {
+    height: 80px;
+}
+
+.navbar h1 {
     color: #ffffff;
     font-size: 24px;
+    font-family: Bodoni Moda,'Lucida Sans', 'Lucida Grande', Verdana, sans-serif;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 12px;
+    align-items: center;
+    margin: -2px;
+    padding: 0;
+}
+
+.menu li {
+    list-style: none;
+    padding: 5px 12px; 
+    text-align: center;
+    border-radius: 4px; 
+    position: relative;
+    overflow: hidden; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu li:hover {
+    background-color: #a00d1e; 
+    transform: scale(1.0); 
+}
+
+.menu li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff; 
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu li:hover::after {
+    width: 60%; }
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Lucida Sans', 'Lucida Grande', Verdana, sans-serif;
+}
+
+/* Botão de menu responsivo */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 110px;
+        right: 0;
+        background-color: #4b0c0c;
+        width: 100%;
+        text-align: center;
+        padding: 16px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu li + li {
+        margin-top: 12px;
+    }
+
+    input[type=checkbox]:checked ~ .menu {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Define o espaçamento entre a logo e o texto */
+}
+
+.logo-container h2 {
+    margin-left: 16px; /* Adiciona um espaçamento extra se necessário */
+}
+.adicionar-resenha {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.adicionar-resenha form {
+    display: flex;
+    flex-direction: column;
+}
+
+.adicionar-resenha label {
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
-header img {
-    height: 50px; /* Ajuste o tamanho da logo conforme necessário */
+.adicionar-resenha input,
+.adicionar-resenha textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
+
+.adicionar-resenha button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.adicionar-resenha button:hover {
+    background-color: #45a049;
+}
+.site-footer {
+    background-color: #4b0c0c; 
+    color: #f8f8f8; 
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    bottom: 0; 
+    width: 100%;
+    margin: -20px;
+
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    color: #dadada;
+    border-top: 1px solid #dddddd;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    color: #f8f8f8; 
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section a {
+    color: #ffffff; 
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #c8a2d4; 
+}
+
+
+
+header.blog-header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header.blog-header .menu {
+    display: flex;
+    gap: 20px;
+}
+
+header.blog-header .menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header.blog-header .menu a:hover {
+    color: #3c0808;
+}
+
+main.blog-content {
+    padding: 40px;
+    text-align: center;
+}
+
+.blog-content .categories {
+    margin-bottom: 20px;
+}
+
+.category-btn {
+    background-color: #f8f8f8;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category-btn:hover, .category-btn.active {
+    background-color: #d4a2a6;
+    color: #fff;
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.post {
+    width: 300px;
+    border: 1px solid #4e0808;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post h3 {
+    margin: 15px;
+    color: #52202f;
+}
+
+.post p {
+    margin: 15px;
+    font-size: 14px;
+    color: #000000;
+}
+
+.post:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+

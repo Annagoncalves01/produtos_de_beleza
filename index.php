@@ -20,8 +20,8 @@
     </form>
 
     <?php
-    require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza-main (3)/produtos_de_beleza/config.php';
-    require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza-main (3)/produtos_de_beleza/Controller/ProdutoController.php';
+    require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/config.php';
+    require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/Controller/ProdutoController.php';
 
     if (isset($_POST["nome_usuario"]) && isset($_POST["email"]) && isset($_POST["senha"])) {
         $produtoController = new ProdutoController($pdo);

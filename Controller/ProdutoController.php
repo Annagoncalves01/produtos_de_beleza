@@ -1,6 +1,6 @@
 <?php
-require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza-main (3)/produtos_de_beleza/config.php';
-require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza-main (3)/produtos_de_beleza/Model/ProdutoModel.php';
+require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/config.php';
+require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/Model/ProdutoModel.php';
 
 class ProdutoController {
     private $produtoModel;
@@ -47,11 +47,22 @@ class ProdutoController {
             echo "E-mail não encontrado!";
         }
     }
+    public function listarResenhas()
+    {
+        return $this->produtoModel->listarResenhas(); // Corrigido para usar a seta
+    }
+
+    public function criarResenhas($nome_usuario, $conteudo, $data)
+    {
+        $this->produtoModel->criarResenhas($nome_usuario, $conteudo, $data);
+    }
+
+
 
     public function listarusuarios()
     {
         $usuario = $this->produtoModel->listarUsuarios();
-        include 'C:/aluno2/xampp/htdocs/produtos_de_beleza-main (3)/produtos_de_beleza/view/usuario/listar.php';
+        include 'C:/aluno2/xampp/htdocs/produtos_de_beleza/view/usuario/listar.php';
     }
 
     public function listarProdutos() {
@@ -74,7 +85,7 @@ class ProdutoController {
     }
     public function exibirListaProdutos() {
         $produtos = $this->listarProdutos();
-        require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza-main (3)/produtos_de_beleza/View/listar.php';
+        require_once 'C:/aluno2/xampp/htdocs/produtos_de_beleza/View/listar.php';
     }
 }
 ?>
